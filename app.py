@@ -1,6 +1,4 @@
 import pickle
-import requests
-from io import BytesIO
 from PIL import Image
 
 import pandas as pd
@@ -9,8 +7,7 @@ import plotly.express as px
 from fbprophet import Prophet
 
 
-response = requests.get(url='https://katonic.ai/favicon.ico')
-im = Image.open(BytesIO(response.content))
+im = Image.open("./favicon.ico")
 
 st.set_page_config(
     page_title='Server Storage Forecasting App', 
