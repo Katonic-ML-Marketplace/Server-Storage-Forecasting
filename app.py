@@ -19,7 +19,7 @@ st.set_page_config(
     initial_sidebar_state = 'auto'
 )
 
-st.sidebar.image('logo.png')
+st.sidebar.image('image/logo.png')
 st.sidebar.title('Server Storage Forecasting')
 st.sidebar.write('---')
 
@@ -31,7 +31,7 @@ Server storage forecasting helps **Businesses assess the Storage Space on their 
 st.write('---')
 
 # Loads Dataset
-data_path = 'server_storage_time_series.csv'
+data_path = 'data/server_storage_time_series.csv'
 data_df = pd.read_csv(data_path, index_col = [0])
 data_df = data_df.T.copy().reset_index().rename(mapper={'index':'date','product_1':'storage_cost'}, axis=1)
 st.write(data_df.head(20))
@@ -57,7 +57,7 @@ def user_input_features():
 
 # to retrain
 agree = st.checkbox('Check to retrain the model')
-filename = 'finalized_model.sav'
+filename = 'model/finalized_model.sav'
 if agree:
 
     # Build Regression Model
