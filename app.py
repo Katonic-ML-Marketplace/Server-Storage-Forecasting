@@ -47,7 +47,7 @@ st.sidebar.header('Specify Input Parameters')
 
 def user_input_features():
     
-    return st.sidebar.slider('Period', 1, 40, 30)
+    return st.sidebar.slider('No of Days', 1, 40, 30)
 
 # Main Panel
 
